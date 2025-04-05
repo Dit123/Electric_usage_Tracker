@@ -21,7 +21,7 @@ public class ApplianceService {
     public Appliance addAppliance(Long userId, String name, double powerUsage, double usageTime, int days) {
         Optional<User> user = userRepository.findById(userId);
         if (user.isEmpty()) {
-            return null; // Return null if user is not found
+            return null;
         }
 
         Appliance appliance = new Appliance(name, powerUsage, usageTime, days, user.get());
@@ -39,5 +39,9 @@ public class ApplianceService {
         }
         applianceRepository.deleteById(id);
         return "Appliance deleted successfully";
+    }
+
+     public double calculateCost(double powerUsage, double hours) {
+        return (powerUsage * hours * 50) / 1000;
     }
 }

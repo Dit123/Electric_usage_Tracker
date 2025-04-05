@@ -22,14 +22,4 @@ public class UserController {
         return userService.loginUser(user.getEmail(), user.getPassword());
     }
 
-    // @PostMapping("/forgot-password")
-    // public String forgotPassword(@RequestParam String email) {
-    //     return userService.generateResetToken(email);
-    // }
-    
-    // @PostMapping("/reset-password")
-    // public String resetPassword(@RequestParam String token, @RequestParam String newPassword) {
-    //     return userService.resetPassword(token, newPassword);
-    // }
-
 }
